@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 0.8vw;
+}
+
+.boxcenter {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.row {
+    float: left;
+    width: 100%;
+}
+
+.headeradmin {
+    background-color: rgb(162, 2, 2);
+    border: 1px #ccc solid;
+    color: lightgoldenrodyellow;
+    border-radius: 5px;
+    padding: 0px 20px;
+
+}
+
+.headeradmin h1 {
+    font-size: 3vw;
+}
+
+.formtitle {
+    background-color: black;
+    border: 1px #ccc solid;
+    padding: 0px 20px;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+}
+
+.boxtrai {
+    width: 20%;
+}
+
+.menudoc ul {
+    margin: 0;
+    padding: 0px;
+    list-style-type: none;
+    text-align: center;
+}
+
+.menudoc ul li {
+    padding: 10px 10px;
+    background-color: #ffffff;
+}
+
+.menudoc ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1vw;
+}
+
+.menudoc ul li a:hover{
+    color: rgb(162, 2, 2);
+    font-size: 1vw;
+}
+
+.menudoc ul li:hover {
+    border-bottom: solid 1px rgb(162, 2, 2);
+
+}
+
+.content {
+    display: flex;
+
+}
+
+.boxphai {
+    border-left: solid 1px #ccc;
+    width: 80%;
+    
+}
+
+.formtitle {
+    background-color: #8ACDD7;
+    border: 1px #ccc solid;
+    padding: 0px 20px;
+    color: #0a0a0a;
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+
+
+}
+
+.formtitle h1 {
+    font-size: 1vw;
+
+}
