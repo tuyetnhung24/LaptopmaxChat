@@ -10,7 +10,11 @@ switch ($act) {
         break;
     case 'binhluan':
         $title = "bình luận";
-
+        if (isset($_GET['ma_bl'])) {
+            $ma_bl = $_GET['ma_bl'];
+            delete_bl($ma_bl);
+            $thongbao = "Xóa dữ liệu thành công!";
+        }
         $listbinhluan = list_binhluan();
         $VIEW = "binh-luan/list.php";
         break;

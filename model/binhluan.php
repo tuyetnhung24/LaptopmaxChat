@@ -22,3 +22,9 @@ function list_binhluan()
     $sql = "SELECT * FROM binh_luan";
     return pdo_query($sql);
 }
+
+function delete_bl($ma_bl)
+{
+    $sql = "DELETE FROM binh_luan WHERE ma_bl = $ma_bl";
+    pdo_execute($sql);
+}
