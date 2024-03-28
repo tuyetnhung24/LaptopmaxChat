@@ -1,98 +1,374 @@
-* {
-    box-sizing: border-box;
-    font-family: sans-serif;
-    font-size: 0.8vw;
+.body {
+    background-color: #f8f9fa;
 }
 
-.boxcenter {
-    width: 70%;
-    margin: 0 auto;
+.containers {
+    margin: 0px;
+    padding: 0px;
 }
 
-.row {
-    float: left;
+.containers header {
     width: 100%;
 }
 
-.headeradmin {
-    background-color: rgb(162, 2, 2);
-    border: 1px #ccc solid;
-    color: lightgoldenrodyellow;
-    border-radius: 5px;
-    padding: 0px 20px;
-
-}
-
-.headeradmin h1 {
-    font-size: 3vw;
-}
-
-.formtitle {
-    background-color: black;
-    border: 1px #ccc solid;
-    padding: 0px 20px;
-    color: #ffffff;
-    border-radius: 5px;
-    margin-bottom: 20px;
-
-}
-
-.boxtrai {
-    width: 20%;
-}
-
-.menudoc ul {
-    margin: 0;
+.containers header .top {
+    margin: 0px;
     padding: 0px;
-    list-style-type: none;
+}
+
+.containers header .top img {
+    margin: 0px;
+    width: 1349px;
+    height: 60px;
+}
+
+.containers header .top .nav-top {
+    display: flex;
+    margin: 0;
+    height: 30px;
+    background-color: blue;
+}
+
+.containers header .top .nav-top .func {
+    font-weight: bold;
+    border: 1px solid blue;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    margin-left: 80px;
+}
+
+.containers header .top .nav-top .func i {
+    margin: auto 5px;
+}
+
+.containers header .top .nav-top .func p {
+    margin: auto;
+}
+
+.containers header .top .navbar {
+    z-index: 5;
+    margin: 0;
+}
+
+.containers header .top .navbar .container-fluid {
+    background-color: white;
+    margin: 0;
+}
+
+.containers header .top .navbar .container-fluid .navbar-brand {
+    margin: 0px 40px;
+}
+
+.containers header .top .navbar .container-fluid .navbar-brand img {
+    width: 110px;
+    height: 80px;
+    background-color: #f8f9fa;
+}
+
+.containers header .top .navbar .container-fluid .search {
+    display: flex;
+}
+
+.containers header .top .navbar .container-fluid .search input {
+    border-radius: 10px;
+    width: 590px;
+    height: 37px;
+    padding: 2px 70px;
+    margin: 0px 20px;
+}
+
+.containers header .top .navbar .container-fluid .search .button {
+    height: 4px;
+    border: none;
+    font-size: 14px;
+    margin: 7px 27px;
+    position: absolute;
+    background-color: white;
+}
+
+.containers header .top .navbar .container-fluid .favorite {
+    margin-right: 1px;
+}
+
+.containers header .top .navbar .container-fluid .favorite a {
+    margin-right: 20px;
+}
+
+.containers header .top .navbar .container-fluid .favorite a i {
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
+.containers header .top .navbar .container-fluid .shop a {
+    margin-right: 40px;
+}
+
+.containers header .top .navbar .container-fluid .shop a i {
+    font-size: 22px;
+    color: black;
+    font-weight: bold;
+}
+
+.containers header .top .navbar .container-fluid .shop a span {
+    position: absolute;
+    border: 1px solid #e1522a;
+    border-radius: 100px;
+    height: 23px;
+    width: 14px;
+    margin-left: 22px;
+    padding: 0px 2px;
+    background-color: #e1522a;
+    color: white;
+    margin-top: 2px;
+}
+
+.containers header .top .navbar .container-fluid .myshop {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.containers header .top .navbar .container-fluid .myshop .closeshop {
+    color: #818181;
+    display: block;
+    position: absolute;
+    background-color: white;
+    top: 8px;
+    right: 18px;
+    border: none;
+    font-size: 40px;
+}
+
+.containers header .top .navbar .container-fluid .myshop .closeshop:hover,
+.containers header .top .navbar .container-fluid .myshop .closeshop:focus {
+    color: black;
+}
+
+.containers header .top .navbar .container-fluid .myshop .overlay-content {
+    position: relative;
+    top: 11%;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.containers header .top .navbar .container-fluid .myshop .overlay-content .imgshop {
+    display: flex;
+}
+
+.containers header .top .navbar .container-fluid .myshop .overlay-content .imgshop img {
+    width: 90px;
+    margin-right: 10px;
+    height: 70px;
+}
+
+.containers header .top .navbar .container-fluid .myshop .overlay-content .total {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.containers header .top .navbar .container-fluid .myshop .overlay-content .button-cart {
+    display: flex;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.containers header .top .navbar .container-fluid .myshop .overlay-content .button-cart div {
+    padding: 5px 10px;
+    border: 1px solid black;
+    color: white;
+    background-color: black;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.containers header .top .navbar .container-fluid .myshop .overlay-content .button-cart div:hover {
+    background-color: white;
+    color: black;
+}
+
+.containers header .top .navbar .account {
+    margin-right: 70px;
+    border: 1px solid #e1522a;
+    background-color: #e1522a;
+    border-radius: 5px;
     text-align: center;
 }
 
-.menudoc ul li {
-    padding: 10px 10px;
-    background-color: #ffffff;
-}
-
-.menudoc ul li a {
-    color: black;
+.containers header .top .navbar .account a {
     text-decoration: none;
-    font-size: 1vw;
+    padding: 10px 20px;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: bold;
 }
 
-.menudoc ul li a:hover{
-    color: rgb(162, 2, 2);
-    font-size: 1vw;
+.containers header .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
-.menudoc ul li:hover {
-    border-bottom: solid 1px rgb(162, 2, 2);
-
-}
-
-.content {
+.containers header .update-banner {
+    position: absolute;
+    z-index: 1;
     display: flex;
-
 }
 
-.boxphai {
-    border-left: solid 1px #ccc;
-    width: 80%;
-    
+.containers header .update-banner .col-70 {
+    margin-left: 80px;
+    margin-top: 25px;
+    width: 1000px;
+    float: left;
 }
 
-.formtitle {
-    background-color: #8ACDD7;
-    border: 1px #ccc solid;
-    padding: 0px 20px;
-    color: #0a0a0a;
+.containers header .update-banner .col-70 .box-banner {
     border-radius: 5px;
-    margin-bottom: 20px;
-
-
-
+    display: flex;
+    width: 100%;
 }
 
-.formtitle h1 {
-    font-size: 1vw;
+.containers header .update-banner .col-70 .box-banner .button {
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    width: 240px;
+    font-size: 14px;
+    text-align: left;
+    background-color: white !important;
+}
 
+.containers header .update-banner .col-70 .box-banner .button:hover {
+    color: blue;
+}
+
+.containers header .update-banner .col-70 .small-update {
+    width: 590px;
+    background-color: white;
+    border: 1px solid white;
+    display: none;
+}
+
+.containers header .update-banner .col-70 .small-update a {
+    font-size: 15px;
+    color: black;
+    text-decoration: none !important;
+    margin: 0px 10px;
+}
+
+.containers header .update-banner .col-70 .small-update a:hover {
+    color: blue;
+    font-weight: bold;
+}
+
+.containers header .update-banner .box-banner:hover .small-update {
+    background-color: white;
+    display: block;
+    border: 1px solid white;
+    font-size: 13px;
+}
+
+.containers header .update-banner .col-30 {
+    width: 30%;
+}
+
+.containers header .update-banner .col-30 div {
+    margin: 25px;
+}
+
+.containers header .update-banner .col-30 div img {
+    width: 200px;
+    height: 200px;
+}
+
+.containers header .banner {
+    margin: auto;
+    position: relative;
+}
+
+.containers header .banner .down {
+    z-index: 1;
+    margin: 0 670px;
+    margin-top: 390px;
+    position: absolute;
+}
+
+.containers header .banner .down p {
+    font-size: 30px;
+    font-weight: bold;
+    color: orange;
+    border: 1px solid orange;
+    padding: 2px 3px;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    animation-name: testdown;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.containers header .banner .down p i {
+    text-align: center;
+}
+
+@keyframes testdown {
+    0% {
+        left: 0px;
+        bottom: 0px;
+    }
+
+    50% {
+        left: 0px;
+        bottom: 50px;
+    }
+
+    100% {
+        left: 0px;
+        bottom: 0px;
+    }
+}
+
+.containers header .banner .img-banner {
+    display: none;
+}
+
+.containers header .banner .img-banner img {
+    height: 480px;
+}
+
+.containers header .banner .prev,
+.containers header .banner .next {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6 ease;
+    border-radius: 0 3px 3px 0;
+    transition: transform 0.4s;
+}
+
+.containers header .banner .prev:hover,
+.containers header .banner .next:hover {
+    transform: scale(0.5);
+}
+
+.containers header .banner .next {
+    right: 0px;
+    border-radius: 3px 0 0 3px;
 }

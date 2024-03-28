@@ -28,3 +28,14 @@ function delete_bl($ma_bl)
     $sql = "DELETE FROM binh_luan WHERE ma_bl = $ma_bl";
     pdo_execute($sql);
 }
+
+function delete_bl_item($ma_bl)
+{
+    $mkh = "";
+    foreach ($ma_bl as $item) {
+        $mkh .= $item . ", ";
+        $mkh = rtrim($mkh, ",");
+        $sql = "DELETE FROM binh_luan WHERE ma_bl IN ($mkh)";
+        pdo_execute($sql);
+    }
+}

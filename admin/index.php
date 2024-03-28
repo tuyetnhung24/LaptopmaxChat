@@ -15,6 +15,12 @@ switch ($act) {
             delete_bl($ma_bl);
             $thongbao = "Xóa dữ liệu thành công!";
         }
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $ma_bl = $_POST['ma_bl'];
+            delete_bl_item($ma_bl);
+            $thongbao = 'xóa dữ liệu thành công!';
+        }
         $listbinhluan = list_binhluan();
         $VIEW = "binh-luan/list.php";
         break;
