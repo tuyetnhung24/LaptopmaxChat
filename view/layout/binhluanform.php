@@ -8,6 +8,8 @@ $ma_sp = $_REQUEST['ma_sp'] ?? '';
 $dsbl = loadall_binhluan($ma_sp);
 //
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,41 +20,26 @@ $dsbl = loadall_binhluan($ma_sp);
     <title>Document</title>
 
 </head>
-<?php
-if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
-    extract($_POST);
-    $ma_sp = $_GET['ma_sp'];
-    // $noi_dung = $_POST['noi_dung'];
-    // $ma_sp = $_POST['ma_sp'];
-    // var_dump($_POST['ma_sp']);die; 
-    if (isset($_SESSION['ten_kh'])) {
-        $ma_kh = $_SESSION['ten_kh']['ma_kh'];
-        $ngay_bl = date('d/m/Y h:i:sa');
-
-        insert_binhluan($noi_dung, $ma_kh, $ma_sp, $ngay_bl);
-        header("Location:" . $_SERVER['HTTP_REFERER']);
-    } else {
-        echo "<script>alert('Đăng nhập để có thể để lại đánh giá!')</script>";
-    }
-}
-?>
 
 <body>
     <div class="mb">
         <div class="box_content2  product_portfolio binhluan ">
             <table>
-
-                <div style="margin-left: 100px">
-                    <div style="display: flex;">
-                        <img src="../imgs/tin1.jpg" alt="" width='40' height='45' style="border-radius: 60px">
-                        <h3>Mã khách hàng: </h3>
+                <?php
+                foreach ($dsbl as $bl) : {
+                        extract($bl);
+                    }
+                ?>
+                    <div style="margin-left: 100px">
+                        <div style="display: flex;">
+                            <img src="../imgs/tin1.jpg" alt="" width='40' height='45' style="border-radius: 60px">
+                            <h3>Mã khách hàng:<?= $ma_kh ?> </h3>
+                        </div>
+                        <span style="font-size: 18px; margin-left: 50px"><?= $noi_dung ?> </span>
+                        <span style="margin-right: 30px; float: right; font-weight: bold; opacity: 0.6;"><?= date("d/m/Y h:i:sa") ?>
+                            </>
                     </div>
-                    <span style="font-size: 18px; margin-left: 50px"><?= $noi_dung ?> </span>
-                    <span
-                        style="margin-right: 30px; float: right; font-weight: bold; opacity: 0.6;"><?= date("d/m/Y h:i:sa") ?>
-                        </>
-                </div>
-
+                <?php endforeach ?>
             </table>
         </div>
         <div class="box_search">
@@ -68,7 +55,19 @@ if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
                 </div>
             </form>
         </div>
-
+        <?php
+        if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
+            extract($_POST);
+            $ma_sp = $_GET['ma_sp'];
+            // $noi_dung = $_POST['noi_dung'];
+            // $ma_sp = $_POST['ma_sp'];
+            // var_dump($_POST['ma_sp']);die; 
+            $ma_kh = $_SESSION['ten_kh']['ma_kh'];
+            $ngay_bl = date('d/m/Y h:i:sa');
+            insert_binhluan($noi_dung, $ma_kh, $ma_sp, $ngay_bl);
+            header("Location:" . $_SERVER['HTTP_REFERER']);
+        }
+        ?>
 
     </div>
 </body>

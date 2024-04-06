@@ -12,6 +12,22 @@ switch ($act) {
         $VIEW = "./views/layout/home.php";
         break;
 
+    case 'search':
+        $title = "sản phẩm tìm kiếm";
+        if (isset($_POST['kyw']) && (['kyw'] != "")) {
+            $kyw = $_POST['kyw'];
+        } else {
+            $kyw = "";
+        }
+        if (isset($_GET['ma_loai']) && ($_GET['ma_loai'] > 0)) {
+            $ma_loai = $_GET['ma_loai'];
+        } else {
+            $ma_loai = 0;
+        }
+        $listsanpham = loadall_sanpham("$kyw", $ma_loai); //lọc kyw
+        $VIEW = './views/layout/searchsp.php';
+        break;
+
     case 'sanpham':
         $title = "Sản phẩm mới";
         $sanpham = all_list_sanpham();
