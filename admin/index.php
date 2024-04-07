@@ -8,6 +8,23 @@ switch ($act) {
         $title = "Tổng Hợp";
         $VIEW = './layout/home.php';
         break;
+        //KHACH HANG
+    case "listkh":
+        $title = 'Danh sách khách hàng';
+        if (isset($_GET['ma_kh'])) {
+            $ma_kh = $_GET['ma_kh'];
+            delete_kh($ma_kh);
+            $thongbao = "Xóa dữ liệu thành công!";
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $ma_kh = $_POST['ma_kh'];
+            delete_kh_item($ma_kh);
+            $thongbao = 'xóa dữ liệu thành công!';
+        }
+        $khachhang = load_all_kh();
+        $VIEW = "khach-hang/list.php";
+        break;
     case 'binhluan':
         $title = "bình luận";
         if (isset($_GET['ma_bl'])) {
