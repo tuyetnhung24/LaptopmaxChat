@@ -19,21 +19,22 @@
                 <th>Hoat_dong</th>
             </tr>
             <?php foreach ($khachhang as $kh) : ?>
-                <?php extract($kh) ?>
-                <tr>
-                    <th><input type="checkbox" name="ma_kh[]" value=<?= $ma_kh ?> class="checkbox"></th>
-                    <td><?= $ma_kh ?></td>
-                    <td><?= $ten_kh ?></td>
-                    <td><?= $email ?></td>
-                    <td><?= $mat_khau ?></td>
-                    <td><?= $dia_chi ?></td>
-                    <td><?= $dien_thoai ?></td>
-                    <td><?= $vai_tro ?></td>
-                    <td>
-                        <a onclick="return confirm('Bạn có muốn xóa không ?')" href="?act=listkh&ma_kh=<?= $ma_kh ?>">xóa</a> -
-                        <a href="?act=updatekh&ma_kh=<?= $ma_kh ?>">sửa</a>
-                    </td>
-                </tr>
+            <?php extract($kh) ?>
+            <tr>
+                <th><input type="checkbox" name="ma_kh[]" value=<?= $ma_kh ?> class="checkbox"></th>
+                <td><?= $ma_kh ?></td>
+                <td><?= $ten_kh ?></td>
+                <td><?= $email ?></td>
+                <td><?= $mat_khau ?></td>
+                <td><?= $dia_chi ?></td>
+                <td><?= $dien_thoai ?></td>
+                <td><?= $vai_tro ?></td>
+                <td>
+                    <a onclick="return confirm('Bạn có muốn xóa không ?')"
+                        href="?act=listkh&ma_kh=<?= $ma_kh ?>">xóa</a> -
+                    <a href="?act=updatekh&ma_kh=<?= $ma_kh ?>">sửa</a>
+                </td>
+            </tr>
             <?php endforeach; ?>
         </table>
         <div>
