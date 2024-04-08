@@ -19,3 +19,10 @@ function loadall_sanpham($kyw = "", $ma_loai = 0)
     $sql .= " ORDER BY ma_sp DESC";
     return  pdo_query($sql);
 }
+
+function list_one_sp($ma_sp)
+{
+    $sql = "SELECT * from sp_laptop WHERE ma_sp = $ma_sp";
+    // echo $sql; die; 
+    return pdo_query_one($sql);
+}

@@ -13,16 +13,19 @@
                     <th>Thành tiền</th>
                 </tr>
 
-                <tr>
-                    <td><input type="checkbox" checked></td>
-                    <td></td>
-                    <td><img src="" alt="" width="150" height="150"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a style="text-decoration: none; font-size: 20px" href="">❎</a></td>
-                </tr>
+                <?php foreach ($carts as $stt => $cart) : ?>
+                    <?php $i = 0; ?>
+                    <tr>
+                        <td><input type="checkbox" checked></td>
+                        <td><?= $stt + 1 ?></td>
+                        <td><img src="views/imgs/<?= $cart['hinh_sp'] ?>" alt="" width="150" height="150"></td>
+                        <td><?= $cart['ten_sp'] ?></td>
+                        <td><?= $cart['gia_sp'] ?></td>
+                        <td><?= $cart['so_luong'] ?></td>
+                        <td><?= $cart['thanh_tien'] ?></td>
+                        <td><a style="text-decoration: none; font-size: 20px" onclick="return confirm('Bạn có muốn xóa không ?')" href="?act=xoacart&ma_sp=<?= $cart['ma_sp'] ?>">❎</a></td>
+                    </tr>
+                <?php endforeach ?>
 
             </table>
         </div>
@@ -31,15 +34,15 @@
                 <h5>Thanh toán</h5>
                 <div style="margin-top: 20px">
                     <span class="check">Tổng tạm tính :</span>
-                    <span style="float: right; font-weight: bold;"> đ</span> <br>
+                    <span style="float: right; font-weight: bold;"><?= $sums ?> đ</span> <br>
                 </div>
                 <div style="margin-bottom: 20px">
                     <span class="check">Tổng tiền :</span>
-                    <span style="float: right; color: blue; font-weight: bold;"> đ</span> <br>
+                    <span style="float: right; color: blue; font-weight: bold;"><?= $sums ?> đ</span> <br>
                 </div>
-                <span><a href=""><button type="button" class="success">Thanh toán</button></a></span>
+                <span><a href="?act=donhang"><button type="button" class="success">Thanh toán</button></a></span>
                 <div style="margin: 30px 0px; margin-left: 280px">
-                    <a href=""><button type="button" class="btn btn-outline-primary">Thoát</button></a>
+                    <a href="?act="><button type="button" class="btn btn-outline-primary">Thoát</button></a>
                 </div>
             </div>
         </div>

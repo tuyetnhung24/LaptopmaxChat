@@ -34,7 +34,37 @@ switch ($act) {
         $VIEW = 'views/layout/sanpham.php';
         break;
 
-
+    case "cart":
+        if (isset($_GET['ma_sp'])) {
+            $ma_sp = $_GET['ma_sp'] ?? '';
+            $sanpham =  list_one_sp($ma_sp);
+            add_to_cart($sanpham['ma_sp'], $sanpham['ten_sp'], $sanpham['gia_sp'], $sanpham['so_luong'], $sanpham['hinh_sp']);
+        }
+        header("location: " . $_SERVER['HTTP_REFERER']);
+        break;
+    case "viewdonhang":
+        $title = "Đơn hàng";
+        $carts = $_SESSION['cart'];
+        // var_dump($carts);
+        // die;
+        $sums = sum_cart();
+        $VIEW = "views/layout/cart/viewdonhang.php";
+        break;
+    case 'xoacart':
+        if (isset($_GET['ma_sp'])) {
+            $xoacart = $_GET['ma_sp'];
+            if (isset($_SESSION['cart'][$xoacart])) {
+                unset($_SESSION['cart'][$xoacart]);
+            }
+            header('location: ?act=viewdonhang');
+            break;
+        }
+    case 'donhang':
+        $title = 'Thông tin thanh toán';
+        $carts = $_SESSION['cart'];
+        $sum = sum_cart();
+        $VIEW = './views/layout/cart/donhang.php';
+        break;
     default:
         echo "./404.php";
         break;

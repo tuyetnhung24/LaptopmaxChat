@@ -15,10 +15,10 @@
                 <th>Phương thức thanh toán</th>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $ma_dh ?></td>
+                <td><?= $ngay_dh ?></td>
+                <td><?= $tong_tien ?></td>
+                <td><?= $dh_pttt ?>< /td>
             </tr>
         </table>
     </div>
@@ -32,10 +32,10 @@
                 <th>Địa chỉ</th>
             </tr>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?= $ten_dh ?></td>
+                <td><?= $email_dh ?></td>
+                <td><?= $sodt_dh ?></td>
+                <td><?= $diachi_dh ?></td>
             </tr>
         </table>
     </div>
@@ -51,15 +51,18 @@
                 <th>Thành tiền</th>
             </tr>
 
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <?php foreach ($carts as $stt => $cart) : ?>
+                <?php $i = 0; ?>
+                <tr>
+                    <td><?= $stt + 1 ?></td>
+                    <td><?= $cart['ten_sp'] ?></td>
+                    <td><?= $cart['gia_sp'] ?></td>
+                    <td><?= $cart['so_luong'] ?></td>
+                    <td><img src="views/imgs/<?= $cart['hinh_sp'] ?>" alt="" width="60" height="60"></td>
+                    <td><?= $cart['thanh_tien'] ?></td>
 
-            </tr>
+                </tr>
+            <?php endforeach ?>
 
         </table>
 
