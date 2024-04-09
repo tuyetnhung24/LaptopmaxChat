@@ -43,11 +43,38 @@ switch ($act) {
         break;
         case "listdh":
             $title = "Đơn hàng";
-           
+            if (isset($_GET['ma_dh'])) {
+                $ma_dh = $_GET['ma_dh'];
+                delete_dh($ma_dh);
+                $thongbao = "Xóa dữ liệu thành công!";
+            }
+    
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $ma_dh = $_POST['ma_dh'];
+                delete_dh_item($ma_dh);
+                $thongbao = 'xóa dữ liệu thành công!';
+            }
             $listdh = load_all_dh();
             // var_dump($listdh);
             $VIEW = "don-hang/list.php";
             break;
+            case "listdhct":
+                $title = "chi tiết đơn hàng";
+                if (isset($_GET['ma_ct'])) {
+                    $ma_ct = $_GET['ma_ct'];
+                    delete_ct($ma_ct);
+                    $thongbao = "Xóa dữ liệu thành công!";
+                }
+        
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    $ma_ct = $_POST['ma_ct'];
+                    delete_ctdh_item($ma_ct);
+                    $thongbao = 'xóa dữ liệu thành công!';
+                }
+                $listct = load_all_ctdh();
+                // var_dump($listdh);
+                $VIEW = "chitietdonhang/list.php";
+                break;
         
     default:
         echo "../404.php";
