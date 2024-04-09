@@ -1,4 +1,4 @@
-<form action="?act=donhangconfirm" method="POST">
+<form action="" method="POST">
     <h5 style="margin: 40px 0px">THÔNG TIN THANH TOÁN ĐƠN HÀNG</h5>
     <div class="col-70">
         <div class="info-pay">
@@ -112,7 +112,7 @@
                 </div>
                 <td><button type="submit" class="success">Đồng ý thanh toán</button></td>
                 <div style="margin:40px 0px; margin-left: 240px">
-                    <a href="?act=viewdonhang"><button type="button" class="btn btn-outline-primary">Quay
+                    <a href=""><button type="button" class="btn btn-outline-primary">Quay
                             lại</button></a>
                 </div>
             </div>
