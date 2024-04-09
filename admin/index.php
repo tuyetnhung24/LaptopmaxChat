@@ -60,7 +60,17 @@ switch ($act) {
             break;
             case "listdhct":
                 $title = "chi tiết đơn hàng";
-               
+                if (isset($_GET['ma_ct'])) {
+                    $ma_ct = $_GET['ma_ct'];
+                    delete_ct($ma_ct);
+                    $thongbao = "Xóa dữ liệu thành công!";
+                }
+        
+                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                    $ma_ct = $_POST['ma_ct'];
+                    delete_ctdh_item($ma_ct);
+                    $thongbao = 'xóa dữ liệu thành công!';
+                }
                 $listct = load_all_ctdh();
                 // var_dump($listdh);
                 $VIEW = "chitietdonhang/list.php";
