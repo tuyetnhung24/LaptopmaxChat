@@ -43,7 +43,17 @@ switch ($act) {
         break;
         case "listdh":
             $title = "Đơn hàng";
-            
+            if (isset($_GET['ma_dh'])) {
+                $ma_dh = $_GET['ma_dh'];
+                delete_dh($ma_dh);
+                $thongbao = "Xóa dữ liệu thành công!";
+            }
+    
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $ma_dh = $_POST['ma_dh'];
+                delete_dh_item($ma_dh);
+                $thongbao = 'xóa dữ liệu thành công!';
+            }
             $listdh = load_all_dh();
             // var_dump($listdh);
             $VIEW = "don-hang/list.php";
