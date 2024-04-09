@@ -41,6 +41,12 @@ switch ($act) {
         $listbinhluan = list_binhluan();
         $VIEW = "binh-luan/list.php";
         break;
+        case "listdhct":
+            $title = "chi tiết đơn hàng";
+            $listct = load_all_ctdh();
+            // var_dump($listdh);
+            $VIEW = "chitietdonhang/list.php";
+            break;
     default:
         echo "../404.php";
 }
