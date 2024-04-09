@@ -74,7 +74,7 @@ switch ($act) {
                 $listct = load_all_ctdh();
                 // var_dump($listdh);
                 $VIEW = "chitietdonhang/list.php";
-                break;
+               
         
     default:
         echo "../404.php";
