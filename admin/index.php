@@ -77,22 +77,22 @@ switch ($act) {
             break;
             case 'addsp':
                 $title = "thêm sản phẩm";
-                $error = "";
-                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    extract($_POST);
-                    if(($_POST['gia_sp']>0)&&($_POST['so_luong'])>0){
-                        $file = $_FILES['hinh_sp'];
-                        $hinh_sp = $file['name'];
-                        move_uploaded_file($file['tmp_name'], "../views/imgs/" . $hinh_sp);
-                        add_sanpham($ten_sp, $gia_sp,$so_luong, $hinh_sp, $mo_ta, $ma_loai);
-                        header("location: ?act=sanpham");
-                        die;
-                    }
-                    else{
-                        $error= "Phải lớn hơn 0";
-                    }
-                  
-                }
+                  $error = "";
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            extract($_POST);
+            if(($_POST['gia_sp']>0)&&($_POST['so_luong'])>0){
+                $file = $_FILES['hinh_sp'];
+                $hinh_sp = $file['name'];
+                move_uploaded_file($file['tmp_name'], "../views/imgs/" . $hinh_sp);
+                add_sanpham($ten_sp, $gia_sp,$so_luong, $hinh_sp, $mo_ta, $ma_loai);
+                header("location: ?act=sanpham");
+                die;
+            }
+            else{
+                $error= "Phải lớn hơn 0";
+            }
+          
+        }
                
                 $loai = all_list_loai();
                 $VIEW = "san-pham/add.php";
