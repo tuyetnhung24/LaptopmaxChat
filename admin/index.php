@@ -74,6 +74,13 @@ switch ($act) {
                 $listct = load_all_ctdh();
                 // var_dump($listdh);
                 $VIEW = "chitietdonhang/list.php";
+            break;
+            case 'addsp':
+                $title = "thêm sản phẩm";
+                
+                $loai = all_list_loai();
+                $VIEW = "san-pham/add.php";
+                break;
                
         
     default:
