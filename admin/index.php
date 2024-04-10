@@ -77,12 +77,18 @@ switch ($act) {
             break;
             case 'addsp':
                 $title = "thêm sản phẩm";
-                
+                $error = "";
+               
                 $loai = all_list_loai();
                 $VIEW = "san-pham/add.php";
                 break;
-               
-        
+                case 'updatesp':
+                    $title = "Update sản phẩm";
+                    
+                    $loai = all_list_loai();
+                    
+                    break;
+                  
     default:
         echo "../404.php";
 }
