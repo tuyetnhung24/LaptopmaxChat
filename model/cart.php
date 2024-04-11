@@ -24,14 +24,3 @@ function add_to_cart($ma_sp, $ten_sp, $gia_sp, $so_luong, $hinh_sp)
         }
     }
 }
-
-//Tính tổng của đơn hàng
-function sum_cart()
-{
-    $carts = $_SESSION['cart'];
-    $sum = 0;
-    foreach ($carts as $cart) {
-        $sum += $cart['gia_sp'] * $cart['so_luong'];
-    }
-    return $sum;
-}
