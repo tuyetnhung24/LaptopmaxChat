@@ -4,7 +4,7 @@
   }
 </style>
 <section class="loai-laptop">
-  <legend>Danh sách bình luận</legend>
+  <legend>Danh sách bình luận của khách hanngf</legend>
   <form action="" method="POST">
     <table class="table table-bordered border-primary" style="text-align: center">
       <tr>
