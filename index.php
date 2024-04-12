@@ -34,6 +34,7 @@ switch ($act) {
         $VIEW = 'views/layout/sanpham.php';
         break;
 
+
     case "cart":
         // if (isset($_GET['ma_sp'])) {
         //     $ma_sp = $_GET['ma_sp'] ?? '';
