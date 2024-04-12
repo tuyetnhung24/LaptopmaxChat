@@ -9,12 +9,7 @@ switch ($act) {
         $VIEW = './layout/home.php';
         break;
         //LOAI
-    case "loai":
-        $title = "Danh Sách Loại";
 
-        $listlaptop = all_list_loai();
-        $VIEW = "loai-laptop/list.php";
-        break;
         //KHACH HANG
     case "listkh":
         $title = 'Danh sách khách hàng';

@@ -26,3 +26,8 @@ function list_one_sp($ma_sp)
     // echo $sql; die; 
     return pdo_query_one($sql);
 }
+function chitiet_sp($ma_sp)
+{
+    $sql = "SELECT sp_laptop.*, ten_loai FROM sp_laptop JOIN loai_laptop ON sp_laptop.ma_loai = loai_laptop.ma_loai WHERE ma_sp = $ma_sp";
+    return pdo_query_one($sql);
+}

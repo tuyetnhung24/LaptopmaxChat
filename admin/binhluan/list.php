@@ -9,12 +9,12 @@
     <table class="table table-bordered border-primary" style="text-align: center">
       <tr>
         <th>Chọn</th>
-        <th>Ma_bl</th>
-        <th>noi_dung</th>
-        <th>ma_kh</th>
-        <th>ma_sp</th>
-        <th>ngay_bl</th>
-        <th>Action</th>
+        <th>Mã bình luận</th>
+        <th>Nội dung</th>
+        <th>Mã khách hàng</th>
+        <th>Mã sản phẩm</th>
+        <th>Ngày bình luận</th>
+        <th>Hành động</th>
       </tr>
       <?php foreach ($listbinhluan as $list) : ?>
         <?php extract($list) ?>

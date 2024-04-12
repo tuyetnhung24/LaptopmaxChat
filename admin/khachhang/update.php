@@ -1,5 +1,14 @@
+<style>
+.add {
+    margin: 20px 50px;
+}
+
+.form-label {
+    margin-left: 10px;
+}
+</style>
 <section class="add">
-    <legend>Cập nhập Khách hàng</legend>
+    <legend>Cập nhập khách hàng</legend>
     <form action="" method="POST">
         <h5 style="color: red"><?= $thongbao ?? "" ?></h5>
         <div class="mb-3">
